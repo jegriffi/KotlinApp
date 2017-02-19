@@ -30,6 +30,14 @@ class NewsFragment: Fragment() {
 
         newsList.setHasFixedSize(true) // <- lazy is executed!!
         newsList.layoutManager = LinearLayoutManager(context)
+
+        initAdapters()
+    }
+
+    fun initAdapters(): Unit {
+        if (news_list.adapter == null) {
+            news_list.adapter = NewsAdapter()
+        }
     }
 
 }
